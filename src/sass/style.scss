@@ -2,6 +2,7 @@
   font-family: "Museo Sans Cyrl", sans-serif;
 }
 @import "variables";
+@import "animations";
 .container {
   max-width: 950px;
   margin: 0 auto;
@@ -18,3 +19,4 @@
 @import "feed";
 @import "footer";
 @import "modal";
+@import "pageup";
