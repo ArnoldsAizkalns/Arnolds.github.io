@@ -3,6 +3,29 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": "off"
+    "compat-api/css": "off",
+    "button-type": "off",
+    "no-protocol-relative-urls": "off",
+    "axe/structure": [
+      "default",
+      {
+        "list": "off"
+      }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "iframe[loading]"
+        ]
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "frame-title": "off"
+      }
+    ],
+    "no-inline-styles": "off"
   }
 }
