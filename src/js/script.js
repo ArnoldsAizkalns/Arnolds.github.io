@@ -126,4 +126,25 @@ $(document).ready(function () {
   validateForms("#consultation form");
   validateForms("#order form");
   validateForms("#consultation-form");
+
+  $("input[name=phone]").mask("+371 99999999");
+
+  $(".feed").submit(function () {
+    e.preventDefault();
+
+    if (!$(this).valid()) {
+      return;
+    }
+
+    $.ajax({
+      type: "POST",
+      URL: "mailer/smart.php",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(this).find("input").val("");
+
+      $("form").trigger("reset");
+    });
+    return false;
+  });
 });
