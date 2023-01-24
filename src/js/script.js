@@ -129,7 +129,7 @@ $(document).ready(function () {
 
   $("input[name=phone]").mask("+371 99999999");
 
-  $(".feed").submit(function () {
+  $(".form").submit(function (e) {
     e.preventDefault();
 
     if (!$(this).valid()) {
@@ -138,11 +138,12 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      URL: "mailer/smart.php",
+      url: "mailer/smart.php",
       data: $(this).serialize(),
     }).done(function () {
       $(this).find("input").val("");
-
+      $("#consultation, #order").fadeOut();
+      $(".overlay, #thanks").fadeIn("slow");
       $("form").trigger("reset");
     });
     return false;
