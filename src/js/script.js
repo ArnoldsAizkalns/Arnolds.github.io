@@ -68,4 +68,62 @@ $(document).ready(function () {
       $(".overlay, #order").fadeIn("slow");
     });
   });
+  /*   $("#consultation form").validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+      },
+      phone: "required",
+      email: {
+        required: true,
+        email: true,
+      },
+    },
+    messages: {
+      name: {
+        required: "Please specify your name",
+        minlength: jQuery.validator.format("At least {0} characters required!"),
+      },
+      phone: "We need you phone number",
+      email: {
+        required: "We need your email address to contact you",
+        email: "Your email must be like name@example.com",
+      },
+    },
+  });
+  $("#order form").validate();
+  $("#consultation-form").validate(); */
+
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2,
+        },
+        phone: "required",
+        email: {
+          required: true,
+          email: true,
+        },
+      },
+      messages: {
+        name: {
+          required: "Please specify your name",
+          minlength: jQuery.validator.format(
+            "At least {0} characters required!"
+          ),
+        },
+        phone: "We need you phone number",
+        email: {
+          required: "We need your email address to contact you",
+          email: "Your email must be like name@example.com",
+        },
+      },
+    });
+  }
+  validateForms("#consultation form");
+  validateForms("#order form");
+  validateForms("#consultation-form");
 });
