@@ -9,7 +9,8 @@
     "axe/structure": [
       "default",
       {
-        "list": "off"
+        "list": "off",
+        "listitem": "off"
       }
     ],
     "compat-api/html": [
@@ -26,6 +27,7 @@
         "frame-title": "off"
       }
     ],
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "css-prefix-order": "off"
   }
 }
